@@ -57,8 +57,8 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#zkeltons-MacBook-Pro
-      darwinConfigurations."zkeltons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      # $ darwin-rebuild build --flake .#zkl10s-MacBook-Pro
+      darwinConfigurations."zkl10s-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           nix-homebrew.darwinModules.nix-homebrew
@@ -66,13 +66,13 @@
             nix-homebrew = {
               enable = true;
               enableRosetta = true;
-              user = "zkelton";
+              user = "zkl10";
             };
           }
         ];
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."zkeltons-MacBook-Pro".pkgs;
+      darwinPackages = self.darwinConfigurations."zkl10s-MacBook-Pro".pkgs;
     };
 }
